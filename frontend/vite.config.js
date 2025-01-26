@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://vai-2ucd.onrender.com',
+        target: 'https://vai-main.onrender.com',
         changeOrigin: true,
       },
     },
