@@ -70,7 +70,7 @@ export const addProduct = (product,businessid) => async (dispatch) => {
                 'Content-Type': 'application/json',
             },
         };
-        const { data } = await axios.post(`/api/product/${businessid.businessid}/createproduct`, product, config);
+        const { data } = await axios.post(`https://vai-main.onrender.com/api/product/${businessid.businessid}/createproduct`, product, config);
         dispatch(addProductSuccess(data));
     } catch (error) {
         dispatch(addProductFail(error.response.data.message));
@@ -79,7 +79,7 @@ export const addProduct = (product,businessid) => async (dispatch) => {
 export const getProducts = (businessid) => async (dispatch) => {
     try {
         dispatch(getProductsRequest());
-        const { data } = await axios.get(`/api/product/${businessid}/getproducts`);
+        const { data } = await axios.get(`https://vai-main.onrender.com/api/product/${businessid}/getproducts`);
         dispatch(getProductsSuccess(data));
     }
     catch (error) {
@@ -91,7 +91,7 @@ export const getProducts = (businessid) => async (dispatch) => {
 export const productDetails=(productid)=>async(dispatch)=>{
     try{
         dispatch(getProductDetailsRequest());
-        const { data } = await axios.get(`/api/product/${productid}`);
+        const { data } = await axios.get(`https://vai-main.onrender.com/api/product/${productid}`);
         dispatch(getProductDetailsSuccess(data));
     }
     catch(error){
